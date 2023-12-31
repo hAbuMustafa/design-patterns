@@ -174,7 +174,7 @@ const myClass = (function () {
 })();
 
 // Usage
-console.log(MyClass.variable); // <= I'm public
+console.log(myClass.variable); // <= I'm public
 ```
 
 Notice that we didn't do any instantiation.
