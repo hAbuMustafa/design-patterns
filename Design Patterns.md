@@ -1,7 +1,5 @@
 # Design Patterns
 
-<span id="to-top"><a href="#design-patterns">Top</a></span>
-
 <div class="table-of-contents">
 
 #### Content:
@@ -200,6 +198,8 @@ Notice that we didn't do any instantiation.
 ### Iterator Pattern
 
 ### Mediator Pattern
+
+<span id="to-top"><a href="#design-patterns">Top</a></span>
 
 <style type="text/css">
 /* Counters */
