@@ -183,7 +183,65 @@ Notice that we didn't do any instantiation.
 
 ### Decorator Pattern
 
+It is used as a wrapper around other objects, to add new functionality to them.
+
+```javascript
+class Animal {
+  get getLimbs() {
+    return 2;
+  }
+}
+
+// This is decorator class
+class Lion {
+  constructor(animal) {
+    this.animal = animal;
+  }
+
+  getLimbs() {
+    return this.animal.getLimbs() + 2;
+  }
+}
+
+// Usage
+const animal = new Animal();
+const lion = new Lion(animal);
+```
+
 ### Facade Pattern
+
+Provides a unified and simplified interface to interact with complex subsystems, abstracting their complexities and making them easier to use.
+
+```javascript
+class ComplexA {
+  complexProcess() {
+    console.log('Complex operation A executed.');
+  }
+}
+
+class ComplexB {
+  complexProcess() {
+    console.log('Complex operation B executed.');
+  }
+}
+
+class Facade {
+  constructor() {
+    this.a = new ComplexA();
+    this.b = new ComplexB();
+  }
+
+  Process() {
+    this.a.complexProcess();
+    this.b.complexProcess();
+  }
+}
+
+// Usage
+
+const facade = new Facade();
+facade.Process(); // <= Complex operation A executed. Complex operation B executed.
+```
 
 ### Adapter Pattern
 
