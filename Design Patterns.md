@@ -14,18 +14,22 @@
   - [Module Pattern](#module-pattern)
 
 - [Structural Patterns](#structural-patterns)
+
   - [Decorator Pattern](#decorator-pattern)
   - [Facade Pattern](#facade-pattern)
   - [Adapter Pattern](#adapter-pattern)
   - [Bridge Pattern](#bridge-pattern)
   - [Composite Pattern](#composite-pattern)
+
 - [Behavioral Patterns](#behavioral-patterns)
+
   - [Observer Pattern](#observer-pattern)
   - [Strategy Pattern](#strategy-pattern)
   - [Command Pattern](#command-pattern)
   - [Iterator Pattern](#iterator-pattern)
   - [Mediator Pattern](#mediator-pattern)
-  </div>
+
+</div>
 
 ## Creational Patterns:
 
@@ -254,6 +258,11 @@ Notice that we didn't do any instantiation.
   }
 
   #to-top {
+    background-color: #333;
+    border-radius: 50%;
+    padding: 0.5rem;
+    box-shadow: 0 0 0.5rem #555;
+
     position: fixed;
     inset-inline-end: 1rem;
     inset-block-end: 1rem;
