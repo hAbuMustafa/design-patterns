@@ -12,6 +12,7 @@
   - [Constructor Pattern](#constructor-pattern)
   - [Prototype Pattern](#prototype-pattern)
   - [Module Pattern](#module-pattern)
+  - [Abstract Pattern](#abstract-pattern)\*
 
 - [Structural Patterns](#structural-patterns)
 
@@ -20,6 +21,8 @@
   - [Adapter Pattern](#adapter-pattern)
   - [Bridge Pattern](#bridge-pattern)
   - [Composite Pattern](#composite-pattern)
+  - [Flyweight Pattern](#flyweight-pattern)\*
+  - [Proxy Pattern](#proxy-pattern)\*
 
 - [Behavioral Patterns](#behavioral-patterns)
 
@@ -28,6 +31,9 @@
   - [Command Pattern](#command-pattern)
   - [Iterator Pattern](#iterator-pattern)
   - [Mediator Pattern](#mediator-pattern)
+  - [Visitor Pattern](#visitor-pattern)\*
+
+\* Denotes articles from [Jaimal](https://dev.to/jaimaldullat/javascript-design-patterns-the-ultimate-guide-part-1-1ehd)'s series. Others are from [Tope](https://dev.to/topefasasi/js-design-patterns-a-comprehensive-guide-h3m)'s article.
 
 </div>
 
@@ -260,6 +266,8 @@ facade.Process(); // <= Complex operation A executed. Complex operation B execut
 ### Iterator Pattern
 
 ### Mediator Pattern
+
+### Visitor Pattern
 
 <span id="to-top"><a href="#design-patterns">Top</a></span>
 
