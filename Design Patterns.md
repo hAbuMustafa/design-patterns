@@ -251,9 +251,116 @@ facade.Process(); // <= Complex operation A executed. Complex operation B execut
 
 ### Adapter Pattern
 
+It provides a way to accomodate/compensate for incompatible interfaces.
+
+```javascript
+class oldInterface {
+  method1(param) {
+    console.log(`Old method 1 ${param}`);
+  }
+}
+
+class newInterface {
+  method1(param) {
+    console.log(`New method 1 ${param}`);
+  }
+}
+
+class InterfaceAdapter extends newInterface {
+  // <= Note the inheritance
+  constructor() {
+    super();
+    this.oldInterface = new oldInterface();
+  }
+
+  method1(param) {
+    this.oldInterface.method1(param);
+  }
+}
+
+// Usage
+const interface = new InterfaceAdapter();
+interface.method1('Hello World'); // <= Old method 1 Hello World
+```
+
 ### Bridge Pattern
 
+Separates the abstraction and implementation of a system, allowing it to evolve independently.
+
+```javascript
+class Shape {
+  constructor(color) {
+    this.color = color;
+  }
+
+  draw() {}
+}
+
+// Concrete Abstraction
+class Circle extends Shape {
+  draw(radius) {
+    this.radius = radius;
+    return Math.PI * radius * radius;
+  }
+}
+
+// Usage
+const redCircle = new Circle('red');
+redCircle.draw(2);
+```
+
 ### Composite Pattern
+
+Allows for the creation of hierarchical structures where each element can be treated as a single object or a collection of objects.
+
+```javascript
+class Employee {
+  constructor(name) {
+    this.name = name;
+  }
+
+  print() {
+    console.log(`--- ${this.name}`);
+  }
+}
+
+class Manager extends Employee {
+  constructor(name) {
+    super(name);
+    this.employees = [];
+  }
+
+  add(employee) {
+    this.employees.push(employee);
+  }
+
+  remove(employee) {
+    const index = this.employees.indexOf(employee);
+    this.employees.splice(index, 1);
+  }
+
+  print() {
+    // <= Notice the method override
+    console.log(`- ${this.name}`);
+    for (const emp of this.employees) {
+      emp.print();
+    }
+  }
+}
+
+// Usage
+const hosam = new Employee('Hosam');
+const madonna = new Employee('Madonna');
+
+const shaimaa = new Manager('Shaimaa');
+shaimaa.add(hosam);
+shaimaa.add(madonna);
+
+const reem = new Manager('Reem');
+reem.add(shaimaa);
+
+reem.print();
+```
 
 ## Behavioral Patterns:
 
