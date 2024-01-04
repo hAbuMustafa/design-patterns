@@ -362,11 +362,92 @@ reem.add(shaimaa);
 reem.print();
 ```
 
+### Flyweight Pattern
+
+### Proxy Pattern
+
 ## Behavioral Patterns:
 
 ### Observer Pattern
 
+Provides coupling of the subject and the observer after any change in the subject.
+
+```javascript
+class Observer {
+  constructor(name) {
+    this.name = name;
+  }
+
+  update() {
+    console.log(`${this.name} is updated.`);
+  }
+}
+
+class Subject {
+  constructor() {
+    this.observers = [];
+  }
+
+  addObserver(observer) {
+    this.observers.push(observer);
+  }
+
+  removeObserver(observer) {
+    const index = this.observers.indexOf(observer);
+    this.observers.splice(index, 1);
+  }
+
+  notifyObservers() {
+    this.observers.forEach((observer) => observer.update());
+  }
+}
+
+const subject = new Subject();
+const pageTitleObserver = new Observer('page title');
+const clientCountObserver = new Observer('client count');
+
+subject.addObserver(pageTitleObserver);
+subject.addObserver(clientCountObserver);
+
+subject.notifyObservers();
+/* <= 
+  page title is updated.
+  client count is updated.
+ */
+```
+
+This is the pattern implemented in signals and state management systems to manifest reactivity
+
 ### Strategy Pattern
+
+Allows for dynamic selection of behavior at runtime by encapsulating it in different strategy objects
+
+```javascript
+class Context {
+  constructor(strategy) {
+    this.strategy = strategy;
+  }
+
+  execute() {
+    this.strategy.execute();
+  }
+}
+
+class StrategyA {
+  execute() {
+    console.log('Strategy A executed.');
+  }
+}
+
+class StrategyB {
+  execute() {
+    console.log('Strategy B executed.');
+  }
+}
+
+const contextA = new Context(new StrategyA());
+contextA.execute(); // <= Strategy A executed.
+```
 
 ### Command Pattern
 
