@@ -413,7 +413,7 @@ subject.notifyObservers();
 /* <= 
   page title is updated.
   client count is updated.
- */
+*/
 ```
 
 This is the pattern implemented in signals and state management systems to manifest reactivity
@@ -451,15 +451,60 @@ contextA.execute(); // <= Strategy A executed.
 
 ### Command Pattern
 
+Decouples the sender of a request from the receiver. Allowing you to parameterize clients with different requests.
+
+```javascript
+class Command {
+  constructor(receiver) {
+    this.receiver = receiver;
+  }
+
+  execute() {
+    this.receiver.execute();
+  }
+}
+
+class Receiver {
+  execute() {
+    console.log('Receiver executed.');
+  }
+}
+
+class Invoker {
+  setCommand(command) {
+    this.command = command;
+  }
+
+  execute() {
+    this.command.execute();
+  }
+}
+
+const receiver = new Receiver();
+const command = new Command(receiver);
+const receiver = new Receiver();
+
+invoker.setCommand(command);
+invoker.execute();
+```
+
 ### Iterator Pattern
 
 ### Mediator Pattern
 
 ### Visitor Pattern
 
-<span id="to-top"><a href="#design-patterns">Top</a></span>
+<span id="to-top">
+  <a href="#design-patterns">
+    Top
+  </a>
+</span>
 
 <style type="text/css">
+:root {
+  scroll-behavior: smooth;
+}
+
 /* Counters */
   h2:first-of-type {
     counter-reset: h2;
